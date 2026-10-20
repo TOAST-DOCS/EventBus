@@ -62,7 +62,7 @@ EventBus API는 User Access Key 토큰으로 인증합니다. 토큰을 발급�
 | 버스 | 초당 50회 |
 
 !!! tip "알아두기"
-* 일괄 발행 API는 이벤트 수와 관계없이 요청 1회를 호출 1회로 셉니다.
+    * 일괄 발행 API는 이벤트 수와 관계없이 요청 1회를 호출 1회로 셉니다.
 
 ## 이벤트 API
 
@@ -184,8 +184,8 @@ curl -X POST "{API 엔드포인트}/v1/events/batch" \
 ```
 
 !!! tip "알아두기"
-* `servicesource`, `eventtype`, `eventid`, `busid`는 EventBus가 사용하는 확장 속성입니다. 같은 이름의 속성을 보내면 EventBus의 값으로 바뀝니다.
+    * `servicesource`, `eventtype`, `eventid`, `busid`는 EventBus가 사용하는 확장 속성입니다. 같은 이름의 속성을 보내면 EventBus의 값으로 바뀝니다.
 
 !!! danger "주의"
-* 일괄 발행 API는 일부 이벤트가 실패해도 `202 Accepted`를 반환합니다. 응답 본문의 `failedCount`와 `results`를 확인하여 실패한 이벤트를 다시 발행합니다.
-* 이벤트를 한 건도 발행하지 못하고 그 원인이 EventBus 내부에 있으면 `500`, `502`, `504`를 반환합니다. 이때는 요청 전체를 다시 보냅니다.
+    * 일괄 발행 API는 일부 이벤트가 실패해도 `202 Accepted`를 반환합니다. 응답 본문의 `failedCount`와 `results`를 확인하여 실패한 이벤트를 다시 발행합니다.
+    * 이벤트를 한 건도 발행하지 못하고 그 원인이 EventBus 내부에 있으면 `500`, `502`, `504`를 반환합니다. 이때는 요청 전체를 다시 보냅니다.
